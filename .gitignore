@@ -1,0 +1,21 @@
+# Configurações locais do VS Code
+.vscode/
+
+# Arquivos temporários
+*.log
+*.tmp
+*.bak
+*~
+
+# Sistema operacional (Windows / macOS)
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Dependências (caso use futuramente)
+node_modules/
+
+# Arquivos de build (caso use no futuro)
+dist/
+build/
