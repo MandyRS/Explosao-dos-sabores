@@ -361,6 +361,7 @@ footer {
   .gallery-images img {
     width: 100px;
     height: 100px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   }
 
   .section-delivery {
@@ -417,6 +418,7 @@ footer {
   .gallery-images img {
     width: 100px;
     height: 100px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   }
   .section-delivery h2{
     font-size: 25px;
