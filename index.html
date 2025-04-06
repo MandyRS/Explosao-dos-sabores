@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+    <script src="scripts.js" defer></script>
+
+    <title>Home</title>
+    
+</head>
+
+<body>
+
+<!--Incio tela inicial-->
+
+<main class="main">
+  <div class="imagem-container">
+     <img src="img/EXPLOSÃO DOS SABORES branca.png" alt="Imagem Animada" class="imagem" id="imagem-animada">
+
+
+     <div class="pedidos">
+      <button id="abrirModal" class="botao" alt="Botao Animado">Qua à Sab - 18:00 às 23:00 <br> Sab e Dom - 11:00 às 14:00</button>
+  </div>
+  
+  <!-- Modal -->
+  <div id="modal" class="modal">
+      <div class="modal-conteudo">
+          <h2>Escolha uma opção</h2>
+
+          <div class="delivery-buttons">
+            <a href="https://wa.me/5583999921413?text=Olá! Gostaria de fazer um pedido na Explosão de Sabores. Seguem meus dados:%0A%0ANome:%0ATelefone:%0ARetirada ou Entrega? (Informar bairro para cálculo da taxa)%0AEndereço completo:%0AForma de pagamento: (Se for entrega, aceitamos PIX ou cartão de crédito/débito)"
+   class="delivery-btn whatsapp" target="_blank">
+   Pedir pelo WhatsApp
+</a>
+
+                    
+            <a href="https://www.ifood.com.br/delivery/joao-pessoa-pb/explosao-de-sabores-jp-funcionarios/f3748f66-c7eb-4cfe-a074-f0fbab6927e4" class="delivery-btn ifood" target="_blank"> Pedir pelo iFood </a>
+          </div>
+
+          <button id="fecharModal">Fechar</button>
+      </div>
+  </div>
+
+
+</main>
+<script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const imagem = document.getElementById("imagem-animada");
+            if (imagem) {
+                setTimeout(() => imagem.classList.add("aparecer"), 500);
+            } else {
+                console.warn("Imagem não encontrada para animação.");
+            }
+           
+        });
+        
+        
+        // Coloque esta função fora do DOMContentLoaded para ser acessível globalmente
+        document.getElementById("abrirModal").addEventListener("click", function() {
+            // Exibe o modal ao clicar no botão
+            document.getElementById("modal").style.display = "flex";
+            document.body.classList.add("modal-aberto");
+        });
+        
+        document.getElementById("fecharModal").addEventListener("click", function() {
+            // Fecha o modal ao clicar no botão "Fechar"
+            document.getElementById("modal").style.display = "none";
+            document.body.classList.remove("modal-aberto");
+        });
+        
+        document.getElementById("fazerPedido").addEventListener("click", function() {
+            // Lógica para "Fazer Pedido"
+            document.getElementById("modal").style.display = "none";
+            document.body.classList.remove("modal-aberto");
+             // Se você quiser redirecionar ou executar a função
+        });
+        
+        document.getElementById("fazerEncomenda").addEventListener("click", function() {
+            // Lógica para "Fazer Encomenda"
+            document.getElementById("modal").style.display = "none";
+            document.body.classList.remove("modal-aberto");
+             // Se você quiser redirecionar ou executar a função
+        });
+
+
+</script>
+
+</section>
+<section class="section section-delivery">
+  <h2 class="section-title">Peça no Conforto de Casa</h2>
+
+  <div class="delivery-info">
+    <div class="delivery-text">
+      <p>Agora ficou ainda mais fácil saborear nossos pratos! 🍔🍟</p>
+      <p>Faça seu pedido pelo <strong>WhatsApp</strong> ou pelo <strong>iFood</strong> e receba onde estiver, com todo o carinho e sabor de sempre.</p>
+
+      <div class="delivery-buttons">
+        <a href="https://wa.me/5583999921413?text=Olá! Gostaria de fazer um pedido na Explosão de Sabores. Seguem meus dados:%0A%0ANome:%0ATelefone:%0ARetirada ou Entrega? (Informar bairro para cálculo da taxa)%0AEndereço completo:%0AForma de pagamento: (Se for entrega, aceitamos PIX ou cartão de crédito/débito)"
+           class="delivery-btn whatsapp" target="_blank">
+          Pedir pelo WhatsApp
+        </a>
+        <a href="https://www.ifood.com.br/delivery/joao-pessoa-pb/explosao-de-sabores-jp-funcionarios/f3748f66-c7eb-4cfe-a074-f0fbab6927e4"
+           class="delivery-btn ifood" target="_blank">
+          Pedir pelo iFood
+        </a>
+      </div>
+    </div>
+
+    <div class="delivery-image">
+      <img src="img/delivery.avif" alt="Entrega Delivery">
+    </div>
+  </div>
+
+  <!-- Galeria de Produtos separada -->
+  <div class="product-gallery">
+    <h3>Conheça nossos destaques</h3>
+    <div class="gallery-images">
+      <img src="img/feijoada.jpg" alt="Feijoada">
+      <img src="img/rubacao.jpg" alt="Rubacão">
+      <img src="img/espaguete.jpg" alt="Espaguete">
+      <img src="img/cachorro.jpg" alt="Cachorro-quente">
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const deliveryImageWrapper = document.querySelector(".delivery-image");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            deliveryImageWrapper.classList.add("visible");
+            observer.unobserve(deliveryImageWrapper);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (deliveryImageWrapper) {
+      observer.observe(deliveryImageWrapper);
+    }
+  });
+</script>
+<footer>
+  <div class="container">
+    <div class="desenvolvido">
+      <p>© 2025 Explosão dos Sabores - Todos os direitos reservados</p>
+      <p>Desenvolvido por <a href="https://www.linkedin.com/in/amanda-regina-7a8a8b222" target="_blank">MRS Desenvolvimento</a></p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+</body>
+</html>
